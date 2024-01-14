@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="JITILab - Let's grow your business" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700">
+  <link rel="stylesheet" href="/splash-screen.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our - JITILab</title>
+</head>
+
+<body class="page-loading">
+    <script>
+        let themeMode = "system";
+
+        if (localStorage.getItem("kt_theme_mode_value")) {
+            themeMode = localStorage.getItem("kt_theme_mode_value");
+        }
+
+        if (themeMode === "system") {
+            themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+
+        document.documentElement.setAttribute("data-bs-theme", themeMode);
+    </script>
+
+    <div id="app"></div>
+
+    <div id="splash-screen" class="splash-screen">
+        <img src="/media/logos/default-dark.svg" class="dark-logo" alt="Metronic dark logo" />
+        <img src="/media/logos/default.svg" class="light-logo" alt="Metronic light logo" />
+        <span>Loading ...</span>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
